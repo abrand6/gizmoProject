@@ -7,7 +7,7 @@ Next steps: check multiple motor controls
 
 int fsrPin = 0;     // the FSR and 10K pulldown are connected to a0
 int pressureInput;     // the analog reading from the FSR resistor divider
-//int ain1 = 8; // High handle
+int ain1 = 8; // High handle
 int ain2 = 9; // Low handle
 int motorValue = 0;
 
