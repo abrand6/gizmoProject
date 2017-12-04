@@ -7,19 +7,21 @@ Description:
 Connect one end of FSR to 5V, the other end to Analog 0
 Then connect one end of a 10K resistor from Analog 0 to ground
 Connect transitor base (control) to PWM pin through a resistor
+For more information please refer to schematic
 ************************************ */
  
  
 int fsrAnalogPin = 0; // FSR is connected to analog 0
-int motorPin = 11;      // connect motor to pin 11 (PWM pin)
-int led = 9 // connect led to pin 9 (PWM pin)
-int fsrReading;      // the analog reading from the FSR resistor divider
-int motorSpeed; // self explanatory
-int ledBrightness // self explanatory
+int motorPin = 11;      // Connect motor to pin 11 (PWM pin)
+int led = 9 // Connect led to pin 9 (PWM pin)
+int fsrReading;      // The analog reading from the FSR resistor divider
+int motorSpeed; // Self explanatory
+int ledBrightness // Self explanatory
  
 void setup(void) {
   Serial.begin(9600);   // Sending debugging information via the Serial monitor
-  pinMode(motorPin, OUTPUT); 
+  pinMode(motorPin, OUTPUT); // Pin 11 an output
+  pinMode(led, OUTPUT); // Pin 9 an output
 }
  
 void loop(void) {
