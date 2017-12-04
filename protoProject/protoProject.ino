@@ -27,11 +27,11 @@ void loop(void) {
   Serial.print("Analog reading = ");
   Serial.println(fsrReading);
  
-  // we'll need to change the range from the analog reading (0-1023) down to the range
-  // used by analogWrite (0-255) with map!
+  // We'll need to change the range from the analog reading (0-1023) down to the range
+  // Used by analogWrite (0-255) with map for both the motor speed and the led brightness
   motorSpeed = map(fsrReading, 0, 1023, 0, 255);
   ledBrightness = map(fsrReading, 0, 1023, 0, 255);
-  // Motor spins faster the harder you press
+  // Motor spins faster the harder we press, led lights brighter the harder we press
   analogWrite(motorPin, motorSpeed);
   analogWrite(led, ledBrightness);
  
