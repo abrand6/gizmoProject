@@ -3,8 +3,7 @@
  
 Connect one end of FSR to 5V, the other end to Analog 0.
 Then connect one end of a 10K resistor from Analog 0 to ground
-Connect transitor base (control) to PWM pin through a resistor
-*/
+Connect transitor base (control) to PWM pin through a resistor 
  
  
 int fsrAnalogPin = 0; // FSR is connected to analog 0
