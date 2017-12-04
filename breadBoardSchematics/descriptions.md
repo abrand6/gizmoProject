@@ -10,7 +10,7 @@ A [DC motor](https://www.wikiwand.com/en/DC_motor) is any of a class of rotary e
 * Jumper Wires
 * Arduino
 
-![DC Wiring](/arduino-dc_wiring.JPG)
+![DC Wiring](gizmoProject/breadBoardSchematics/arduino-dc_wiring.JPG)
 
 + AIN1 to pin 8
 + AIN2 to pin 9
