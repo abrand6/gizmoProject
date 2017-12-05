@@ -17,11 +17,17 @@ int led = 9; // Connect led to pin 9 (PWM pin)
 int fsrReading;      // The analog reading from the FSR resistor divider
 int motorSpeed; // Self explanatory
 int ledBrightness; // Self explanatory
+int redpin = 5;
+int greenpin = 6;
+int bluepin = 3;
  
 void setup(void) {
   Serial.begin(9600);   // Sending debugging information via the Serial monitor
   pinMode(motorPin, OUTPUT); // Pin 11 an output
   pinMode(led, OUTPUT); // Pin 9 an output
+  pinMode(redpin, OUTPUT);
+  pinMode(greenpin, OUTPUT);
+  pinMode(bluepin, OUTPUT);
 }
  
 void loop(void) {
@@ -35,7 +41,9 @@ void loop(void) {
   ledBrightness = map(fsrReading, 0, 1023, 0, 255);
   // Motor spins faster the harder we press, led lights brighter the harder we press
   analogWrite(motorPin, motorSpeed);
-  analogWrite(led, ledBrightness);
+  analogWrite(redpin, ledBrightness);
+  analogWrite(greenpin, ledBrightness);
+  analogWrite(bluepin, ledBrightness);
  
-  delay(100);
+  delay(1000);
 }
