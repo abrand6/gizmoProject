@@ -37,8 +37,8 @@ void loop(void) {
  
   // We'll need to change the range from the analog reading (0-1023) down to the range
   // Used by analogWrite (0-255) with map for both the motor speed and the led brightness
-  motorSpeed = map(fsrReading, 0, 1023, 0, 255);
-  ledBrightness = map(fsrReading, 0, 1023, 0, 255);
+  motorSpeed = map(fsrReading, 0, 1023, 20, 255);
+  ledBrightness = map(fsrReading, 0, 1023, 20, 255);
   // Motor spins faster the harder we press, led lights brighter the harder we press
   analogWrite(motorPin, motorSpeed);
   analogWrite(redpin, ledBrightness);
