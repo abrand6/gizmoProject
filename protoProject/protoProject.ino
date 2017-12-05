@@ -45,5 +45,5 @@ void loop(void) {
   analogWrite(greenpin, ledBrightness);
   analogWrite(bluepin, ledBrightness);
  
-  delay(1000);
+  delay(100);
 }
