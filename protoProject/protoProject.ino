@@ -13,10 +13,10 @@ For more information please refer to schematic
  
 int fsrAnalogPin = 0; // FSR is connected to analog 0
 int motorPin = 11;      // Connect motor to pin 11 (PWM pin)
-int led = 9 // Connect led to pin 9 (PWM pin)
+int led = 9; // Connect led to pin 9 (PWM pin)
 int fsrReading;      // The analog reading from the FSR resistor divider
 int motorSpeed; // Self explanatory
-int ledBrightness // Self explanatory
+int ledBrightness; // Self explanatory
  
 void setup(void) {
   Serial.begin(9600);   // Sending debugging information via the Serial monitor
