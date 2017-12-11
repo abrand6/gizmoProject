@@ -1,7 +1,17 @@
-#include <FastLED.h>
+/* ***************************
+ * Gizmo Project
+ * 
+ * 
+ * 
+ * 
+ */
 
-#define LED_PIN   9
-#define NUM_LEDS  24
+
+
+#include <FastLED.h> // import LED helper library
+
+#define LED_PIN   9 // define the Led Pin
+#define NUM_LEDS  24 // number of LED's
 #define COLOR_ORDER GRB
 CRGB leds[NUM_LEDS];
 int fsrAnalogPin = 0; // FSR is connected to analog 0
