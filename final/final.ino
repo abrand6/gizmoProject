@@ -1,9 +1,9 @@
 /* ***************************
- * Gizmo Project
- * 
- * 
- * 
- * 
+ * Gizmo Project Code
+ * Last edited: 11/12/17
+ * Description: 
+ * speed and brightness control by motion sensor
+ * (c) F. A. Macher 2017
  */
 
 
@@ -12,7 +12,7 @@
 
 #define LED_PIN   9 // define the Led Pin
 #define NUM_LEDS  24 // number of LED's
-#define COLOR_ORDER GRB
+#define COLOR_ORDER GRB // color RGB order
 CRGB leds[NUM_LEDS];
 int fsrAnalogPin = 0; // FSR is connected to analog 0
 int motorPin = 11;      // Connect motor to pin 11 (PWM pin)
@@ -36,9 +36,14 @@ void loop(void) {
   analogWrite(motorPin, motorSpeed);
   delay(100);
 
-  FastLED.setBrightness( ledBrig ); //High = 200, Low = 50
-  leds[0] = CRGB::Yellow; //Add colour name here
-  leds[1] = CRGB::Yellow;
+  // We'll need to change the range from the analog reading (0-1023) down to the range
+  // Used by analogWrite (0-255) with map for both the motor speed and the led brightness
+  // ledBrightness = map(fsrReading, 0, 1023, 50, 200);
+  // Motor spins faster the harder we press, led lights brighter the harder we press
+
+  FastLED.setBrightness( ledBrig ); // High = 200, Low = 50
+  leds[0] = CRGB::Yellow; // Add colour name here
+  leds[1] = CRGB::Yellow; // assign to all LED's
   leds[2] = CRGB::Yellow;
   leds[3] = CRGB::Yellow;
   leds[4] = CRGB::Yellow;
@@ -70,7 +75,7 @@ void loop(void) {
   //Yellow - Very Golden - May be good for happiness
   //Deep Pink - Powerful Pink - May be good for friendly
   //Greens all come out very yellow or very blue
-  FastLED.show();
+  FastLED.show(); # show light
 
 
 }
