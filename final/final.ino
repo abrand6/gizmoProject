@@ -13,7 +13,7 @@
 #define LED_PIN   9 // define the Led Pin
 #define NUM_LEDS  24 // number of LED's
 #define COLOR_ORDER GRB // color RGB order
-CRGB leds[NUM_LEDS];
+CRGB leds[NUM_LEDS]; // apply the number of LED's  to the necessary
 int fsrAnalogPin = 0; // FSR is connected to analog 0
 int motorPin = 11;      // Connect motor to pin 11 (PWM pin)
 int fsrReading;      // The analog reading from the FSR resistor divider
@@ -22,19 +22,19 @@ int ledBrig; // led brightness
 
 
 void setup(void) {
-  FastLED.addLeds<NEOPIXEL, LED_PIN>(leds, NUM_LEDS);
+  FastLED.addLeds<NEOPIXEL, LED_PIN>(leds, NUM_LEDS); // pin identifiaction via C file
   pinMode(motorPin, OUTPUT); // Pin 11 an output
 
 }
 
 void loop(void) {
-  fsrReading = analogRead(fsrAnalogPin);
-  Serial.print("Analog reading = ");
-  Serial.println(fsrReading);
-  motorSpeed = map(fsrReading, 0, 1023, 50, 255);
-  ledBrig = map(fsrReading, 0, 1023, 40, 200);
-  analogWrite(motorPin, motorSpeed);
-  delay(100);
+  fsrReading = analogRead(fsrAnalogPin); // Read the pressure sensor reading
+  Serial.print("Analog reading = "); // Serial add reading description
+  Serial.println(fsrReading); // Serial fsrReading
+  motorSpeed = map(fsrReading, 0, 1023, 50, 255); // map different min and max values to translate intensity on pressure sensor to bit motor scale
+  ledBrig = map(fsrReading, 0, 1023, 40, 200); // same but to LED's
+  analogWrite(motorPin, motorSpeed); // wirte digital value to analog motor pin of motor speed
+  delay(100); // wait
 
   // We'll need to change the range from the analog reading (0-1023) down to the range
   // Used by analogWrite (0-255) with map for both the motor speed and the led brightness
@@ -75,7 +75,7 @@ void loop(void) {
   //Yellow - Very Golden - May be good for happiness
   //Deep Pink - Powerful Pink - May be good for friendly
   //Greens all come out very yellow or very blue
-  FastLED.show(); # show light
+  FastLED.show(); // show light
 
 
 }
